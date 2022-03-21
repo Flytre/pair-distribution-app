@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.mock;
@@ -271,7 +272,7 @@ public class DayPairsHelperTest {
 		DayPairs dayPairs = subject.generateNewDayPairs(tracks, devs, pairs, pairsWeight, getStandardCompanies());
 
 		assertThat(dayPairs.getTracks().size(), is(2));
-		assertThat(dayPairs.getTracks(), contains("track1", "track2"));
+		assertThat(dayPairs.getTracks(), containsInAnyOrder("track1", "track2"));
 	}
 
 	@Test
